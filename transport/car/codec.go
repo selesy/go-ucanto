@@ -1,10 +1,10 @@
 package car
 
 import (
-	"github.com/web3-storage/go-ucanto/core/message"
-	"github.com/web3-storage/go-ucanto/transport"
-	"github.com/web3-storage/go-ucanto/transport/car/request"
-	"github.com/web3-storage/go-ucanto/transport/car/response"
+	"github.com/selesy/go-ucanto/core/message"
+	"github.com/selesy/go-ucanto/transport"
+	"github.com/selesy/go-ucanto/transport/car/request"
+	"github.com/selesy/go-ucanto/transport/car/response"
 )
 
 type carOutbound struct{}

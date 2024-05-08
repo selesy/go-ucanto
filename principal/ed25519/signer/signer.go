@@ -8,10 +8,10 @@ import (
 
 	"github.com/multiformats/go-multibase"
 	"github.com/multiformats/go-varint"
-	"github.com/web3-storage/go-ucanto/did"
-	"github.com/web3-storage/go-ucanto/principal"
-	"github.com/web3-storage/go-ucanto/principal/ed25519/verifier"
-	"github.com/web3-storage/go-ucanto/ucan/crypto/signature"
+	"github.com/selesy/go-ucanto/did"
+	"github.com/selesy/go-ucanto/principal"
+	"github.com/selesy/go-ucanto/principal/ed25519/verifier"
+	"github.com/selesy/go-ucanto/ucan/crypto/signature"
 )
 
 const Code = 0x1300

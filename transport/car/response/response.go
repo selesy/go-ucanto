@@ -3,10 +3,10 @@ package response
 import (
 	"fmt"
 
-	"github.com/web3-storage/go-ucanto/core/car"
-	"github.com/web3-storage/go-ucanto/core/dag/blockstore"
-	"github.com/web3-storage/go-ucanto/core/message"
-	"github.com/web3-storage/go-ucanto/transport"
+	"github.com/selesy/go-ucanto/core/car"
+	"github.com/selesy/go-ucanto/core/dag/blockstore"
+	"github.com/selesy/go-ucanto/core/message"
+	"github.com/selesy/go-ucanto/transport"
 )
 
 const ContentType = car.ContentType

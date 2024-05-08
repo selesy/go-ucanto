@@ -2,6 +2,8 @@ package did
 
 import (
 	"testing"
+
+	mcodec "github.com/multiformats/go-multicodec"
 )
 
 func TestParseDIDKey(t *testing.T) {
@@ -15,11 +17,32 @@ func TestParseDIDKey(t *testing.T) {
 	}
 }
 
-func TestDecodeDIDKey(t *testing.T) {
+func TestDecodeDIDKeyED25519(t *testing.T) {
 	str := "did:key:z6Mkod5Jr3yd5SC7UDueqK4dAAw5xYJYjksy722tA9Boxc4z"
 	d0, err := Parse(str)
 	if err != nil {
 		t.Fatalf("%v", err)
+	}
+	if d0.Algorithm() != mcodec.Ed25519Pub {
+		t.Fatalf("expected algorithm to be %s", mcodec.Ed25519Pub)
+	}
+	d1, err := Decode(d0.Bytes())
+	if err != nil {
+		t.Fatalf("%v", err)
+	}
+	if d1.String() != str {
+		t.Fatalf("expected %v to equal %v", d1.String(), str)
+	}
+}
+
+func TestDecodeDIDKeySecp256k1(t *testing.T) {
+	str := "did:key:zQ3shq4bgfyqUGzQiXXneg4xtQBh4t8vmb8bREHveJVqj2DGW"
+	d0, err := Parse(str)
+	if err != nil {
+		t.Fatalf("%v", err)
+	}
+	if d0.Algorithm() != mcodec.Secp256k1Pub {
+		t.Fatalf("expected algorithm to be %s", mcodec.Secp256k1Pub)
 	}
 	d1, err := Decode(d0.Bytes())
 	if err != nil {

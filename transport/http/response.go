@@ -4,7 +4,7 @@ import (
 	"io"
 	"net/http"
 
-	"github.com/web3-storage/go-ucanto/transport"
+	"github.com/selesy/go-ucanto/transport"
 )
 
 type response struct {

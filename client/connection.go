@@ -5,12 +5,12 @@ import (
 	"fmt"
 	"hash"
 
-	"github.com/web3-storage/go-ucanto/core/invocation"
-	"github.com/web3-storage/go-ucanto/core/ipld/block"
-	"github.com/web3-storage/go-ucanto/core/iterable"
-	"github.com/web3-storage/go-ucanto/core/message"
-	"github.com/web3-storage/go-ucanto/transport"
-	"github.com/web3-storage/go-ucanto/ucan"
+	"github.com/selesy/go-ucanto/core/invocation"
+	"github.com/selesy/go-ucanto/core/ipld/block"
+	"github.com/selesy/go-ucanto/core/iterable"
+	"github.com/selesy/go-ucanto/core/message"
+	"github.com/selesy/go-ucanto/transport"
+	"github.com/selesy/go-ucanto/ucan"
 )
 
 type Connection interface {

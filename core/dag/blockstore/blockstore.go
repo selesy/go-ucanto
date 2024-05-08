@@ -5,8 +5,8 @@ import (
 	"io"
 	"sync"
 
-	"github.com/web3-storage/go-ucanto/core/ipld"
-	"github.com/web3-storage/go-ucanto/core/iterable"
+	"github.com/selesy/go-ucanto/core/ipld"
+	"github.com/selesy/go-ucanto/core/iterable"
 )
 
 type BlockReader interface {

@@ -4,10 +4,10 @@ import (
 	"net/http"
 
 	"github.com/ipld/go-ipld-prime"
-	"github.com/web3-storage/go-ucanto/core/car"
-	"github.com/web3-storage/go-ucanto/core/message"
-	"github.com/web3-storage/go-ucanto/transport"
-	uhttp "github.com/web3-storage/go-ucanto/transport/http"
+	"github.com/selesy/go-ucanto/core/car"
+	"github.com/selesy/go-ucanto/core/message"
+	"github.com/selesy/go-ucanto/transport"
+	uhttp "github.com/selesy/go-ucanto/transport/http"
 )
 
 const ContentType = car.ContentType

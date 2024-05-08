@@ -5,20 +5,19 @@ import (
 	"strings"
 
 	mbase "github.com/multiformats/go-multibase"
+	mcodec "github.com/multiformats/go-multicodec"
 	varint "github.com/multiformats/go-varint"
 )
 
 const Prefix = "did:"
 const KeyPrefix = "did:key:"
 
-const DIDCore = 0x0d1d
-const Ed25519 = 0xed
-
-var MethodOffset = varint.UvarintSize(uint64(DIDCore))
+var MethodOffset = varint.UvarintSize(uint64(mcodec.Multidid))
 
 type DID struct {
-	key bool
-	str string
+	key  bool
+	code mcodec.Code
+	str  string
 }
 
 // Undef can be used to represent a nil or undefined DID, using DID{}
@@ -33,7 +32,21 @@ func (d DID) Bytes() []byte {
 	if !d.Defined() {
 		return nil
 	}
+
+	bytes := []byte(d.str)
+	if d.code != mcodec.Identity {
+		bytes = append(varint.ToUvarint(uint64(d.code)), bytes...)
+	}
+
+	return bytes
+}
+
+func (d DID) Key() []byte {
 	return []byte(d.str)
+}
+
+func (d DID) Algorithm() mcodec.Code {
+	return d.code
 }
 
 func (d DID) DID() DID {
@@ -43,22 +56,27 @@ func (d DID) DID() DID {
 // String formats the decentralized identity document (DID) as a string.
 func (d DID) String() string {
 	if d.key {
-		key, _ := mbase.Encode(mbase.Base58BTC, []byte(d.str))
-		return "did:key:" + key
+		key, _ := mbase.Encode(mbase.Base58BTC, d.Bytes())
+
+		return KeyPrefix + key
 	}
-	return "did:" + d.str[MethodOffset:]
+
+	return Prefix + d.str[MethodOffset:]
 }
 
 func Decode(bytes []byte) (DID, error) {
-	code, _, err := varint.FromUvarint(bytes)
+	code, read, err := varint.FromUvarint(bytes)
 	if err != nil {
 		return Undef, err
 	}
-	if code == Ed25519 {
-		return DID{str: string(bytes), key: true}, nil
-	} else if code == DIDCore {
-		return DID{str: string(bytes)}, nil
+
+	mcode := mcodec.Code(code)
+	if mcode == mcodec.Ed25519Pub || mcode == mcodec.Secp256k1Pub {
+		return DID{str: string(bytes[read:]), key: true, code: mcode}, nil
+	} else if mcode == mcodec.Multidid {
+		return DID{str: string(bytes), code: mcode}, nil
 	}
+
 	return Undef, fmt.Errorf("unsupported DID encoding: 0x%x", code)
 }
 
@@ -79,8 +97,9 @@ func Parse(str string) (DID, error) {
 	}
 
 	buf := make([]byte, MethodOffset)
-	varint.PutUvarint(buf, DIDCore)
+	varint.PutUvarint(buf, uint64(mcodec.Multidid))
 	suffix, _ := strings.CutPrefix(str, Prefix)
 	buf = append(buf, suffix...)
+
 	return DID{str: string(buf)}, nil
 }

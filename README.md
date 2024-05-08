@@ -5,7 +5,7 @@ Ucanto UCAN RPC in Golang.
 ## Install
 
 ```console
-go get github.com/web3-storage/go-ucanto
+go get github.com/selesy/go-ucanto
 ```
 
 ## Usage
@@ -17,14 +17,14 @@ import (
   "net/url"
   "ioutil"
 
-  "github.com/web3-storage/go-ucanto/client"
-  "github.com/web3-storage/go-ucanto/did"
-  ed25519 "github.com/web3-storage/go-ucanto/principal/ed25519/signer"
-  "github.com/web3-storage/go-ucanto/transport/car"
-  "github.com/web3-storage/go-ucanto/transport/http"
-  "github.com/web3-storage/go-ucanto/core/delegation"
-  "github.com/web3-storage/go-ucanto/core/invocation"
-  "github.com/web3-storage/go-ucanto/core/receipt"
+  "github.com/selesy/go-ucanto/client"
+  "github.com/selesy/go-ucanto/did"
+  ed25519 "github.com/selesy/go-ucanto/principal/ed25519/signer"
+  "github.com/selesy/go-ucanto/transport/car"
+  "github.com/selesy/go-ucanto/transport/http"
+  "github.com/selesy/go-ucanto/core/delegation"
+  "github.com/selesy/go-ucanto/core/invocation"
+  "github.com/selesy/go-ucanto/core/receipt"
 )
 
 // service URL & DID
@@ -104,7 +104,7 @@ fmt.Println(rcpt.Out().Ok())
 
 ## API
 
-[pkg.go.dev Reference](https://pkg.go.dev/github.com/web3-storage/go-ucanto)
+[pkg.go.dev Reference](https://pkg.go.dev/github.com/selesy/go-ucanto)
 
 ## Related
 
@@ -112,7 +112,7 @@ fmt.Println(rcpt.Out().Ok())
 
 ## Contributing
 
-Feel free to join in. All welcome. Please [open an issue](https://github.com/web3-storage/go-ucanto/issues)!
+Feel free to join in. All welcome. Please [open an issue](https://github.com/selesy/go-ucanto/issues)!
 
 ## License
 

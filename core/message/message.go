@@ -4,14 +4,14 @@ import (
 	"fmt"
 	"io"
 
-	"github.com/web3-storage/go-ucanto/core/dag/blockstore"
-	"github.com/web3-storage/go-ucanto/core/invocation"
-	"github.com/web3-storage/go-ucanto/core/ipld"
-	"github.com/web3-storage/go-ucanto/core/ipld/block"
-	"github.com/web3-storage/go-ucanto/core/ipld/codec/cbor"
-	"github.com/web3-storage/go-ucanto/core/ipld/hash/sha256"
-	"github.com/web3-storage/go-ucanto/core/iterable"
-	mdm "github.com/web3-storage/go-ucanto/core/message/datamodel"
+	"github.com/selesy/go-ucanto/core/dag/blockstore"
+	"github.com/selesy/go-ucanto/core/invocation"
+	"github.com/selesy/go-ucanto/core/ipld"
+	"github.com/selesy/go-ucanto/core/ipld/block"
+	"github.com/selesy/go-ucanto/core/ipld/codec/cbor"
+	"github.com/selesy/go-ucanto/core/ipld/hash/sha256"
+	"github.com/selesy/go-ucanto/core/iterable"
+	mdm "github.com/selesy/go-ucanto/core/message/datamodel"
 )
 
 type AgentMessage interface {

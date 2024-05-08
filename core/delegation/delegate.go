@@ -4,12 +4,12 @@ import (
 	"fmt"
 	"io"
 
-	"github.com/web3-storage/go-ucanto/core/dag/blockstore"
-	"github.com/web3-storage/go-ucanto/core/ipld/block"
-	"github.com/web3-storage/go-ucanto/core/ipld/codec/cbor"
-	"github.com/web3-storage/go-ucanto/core/ipld/hash/sha256"
-	"github.com/web3-storage/go-ucanto/ucan"
-	udm "github.com/web3-storage/go-ucanto/ucan/datamodel/ucan"
+	"github.com/selesy/go-ucanto/core/dag/blockstore"
+	"github.com/selesy/go-ucanto/core/ipld/block"
+	"github.com/selesy/go-ucanto/core/ipld/codec/cbor"
+	"github.com/selesy/go-ucanto/core/ipld/hash/sha256"
+	"github.com/selesy/go-ucanto/ucan"
+	udm "github.com/selesy/go-ucanto/ucan/datamodel/ucan"
 )
 
 // Option is an option configuring a UCAN delegation.

@@ -5,7 +5,7 @@ import (
 	"net/http"
 	"net/url"
 
-	"github.com/web3-storage/go-ucanto/transport"
+	"github.com/selesy/go-ucanto/transport"
 )
 
 type channel struct {

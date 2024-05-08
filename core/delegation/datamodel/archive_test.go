@@ -5,10 +5,10 @@ import (
 
 	"github.com/ipfs/go-cid"
 	cidlink "github.com/ipld/go-ipld-prime/linking/cid"
-	adm "github.com/web3-storage/go-ucanto/core/delegation/datamodel"
-	"github.com/web3-storage/go-ucanto/core/ipld/block"
-	"github.com/web3-storage/go-ucanto/core/ipld/codec/cbor"
-	"github.com/web3-storage/go-ucanto/core/ipld/hash/sha256"
+	adm "github.com/selesy/go-ucanto/core/delegation/datamodel"
+	"github.com/selesy/go-ucanto/core/ipld/block"
+	"github.com/selesy/go-ucanto/core/ipld/codec/cbor"
+	"github.com/selesy/go-ucanto/core/ipld/hash/sha256"
 )
 
 func TestEncodeDecode(t *testing.T) {
